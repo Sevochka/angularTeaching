@@ -1,0 +1,62 @@
+<div class="container">
+  <p class="important">Two-way binding</p>
+  <div class="alert alert-primary" role="alert">
+    <input type="text" class="form-control" [(ngModel)]="str1">
+    {{str1}}
+    <hr>
+    <input type="text" class="form-control" [value]="str2" (input)="onInput($event)">
+    {{str2}}
+  </div>
+  <hr>
+
+  <p class="important">Директивы.</p>
+  <div class="alert alert-secondary" role="alert">
+    <p class="important">[ngStyle]</p>
+    <button class="btn btn-warning m-2" (click)="flag = !flag">Change color</button>
+    <div [ngStyle]="{
+      'width': '200px',
+      'height': '200px',
+      'border': '2px solid black',
+      'background': flag ? 'red' : 'blue'
+    }"></div>
+    <hr>
+    <p class="important">[ngClass]</p>
+    <div [ngClass]="{
+      red: flag,
+      blue:!flag
+    }">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure id qui vel voluptatum cum error ducimus aperiam
+      quo in temporibus.</div>
+    <hr>
+    <p class="important">Отображение по условию</p>
+    <button class="btn btn-danger m-2" (click)="toggle = !toggle">Toggle</button>
+    <p class = "red" *ngIf="toggle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, sapiente?</p>
+    <p class = "blue" *ngIf="!toggle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed, molestias.</p>
+    <hr>
+    <p class="important">[ngFor] Simple</p>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let name of arr; let i=index">
+        {{name}}
+        <span class="badge badge-primary badge-pill">{{i+1}}</span>
+      </li>
+    </ul>
+    <hr>
+    <p class="important">[ngFor]</p>
+    <div class="card border-primary mb-3" style="max-width: 18rem;" *ngFor="let author of objArr; let i=index">
+      <div class="card-header">{{author.fullName}}</div>
+      <div class="card-body text-primary">
+        <h5 class="card-title">Произведения:</h5>
+        <p class="card-text" *ngFor="let c of author.compositions;">{{c}}</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="important">Пайпы.</p>
+  <div class="alert alert-success" role="alert">
+    <p>{{ strForPipe | lowercase }}</p>
+    <p>{{ strForPipe | uppercase }}</p>
+    <p>{{date}}</p>
+    <p>{{ date | date:shortDate }}</p>
+    <p>{{ number | percent:digitInfo }}</p>
+  </div>
+
+</div>

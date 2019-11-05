@@ -1,0 +1,24 @@
+<div class="container mt-3">
+  <div class="alert alert-primary">
+    <h1>Services</h1>
+    <div class="card">
+      <h2>App Couter {{appCounterService.counter}}</h2>
+
+      <button class="btn btn-success" (click)="appCounterService.increase()">+</button>
+      <button class="btn btn0danger" (click)="appCounterService.decrease()">-</button>
+    </div>
+  </div>
+  <hr>
+  <hr>
+  <div class="alert alert-warning">
+    <h2>Students</h2>
+    <app-student-add></app-student-add>
+    <hr>
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let s of students">
+          <app-student [st]= "s"></app-student>
+        </li>
+      </ul>
+  </div>
+  
+</div>

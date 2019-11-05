@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Components</h1>
+
+  <app-post-form (onAdd) = "updatePosts($event)"></app-post-form>
+
+  <hr>
+
+  <app-post *ngFor="let post of posts" [myPost]="post" (onRemove) = "removePost($event)"></app-post>
+
+</div>

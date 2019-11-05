@@ -1,0 +1,16 @@
+<div>
+  <input 
+    type="text" 
+    class="form-control" 
+    placeholder="Title.."
+    [(ngModel)]="title"
+  >
+  <input 
+    type="text" 
+    class="form-control mt-2" 
+    placeholder="Text.."
+    [(ngModel)]="text"
+    >
+  <button class="btn btn-success mt-2" (click)="addPost()">Add post</button>
+
+</div>

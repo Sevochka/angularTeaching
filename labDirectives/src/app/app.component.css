@@ -1,0 +1,14 @@
+.important{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.container{
+    margin-top: 25px;
+}
+.red{
+    background: red;
+}
+.blue{
+    background: blue;
+}

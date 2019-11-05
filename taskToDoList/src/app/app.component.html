@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="alert alert-primary" role="alert">
+   
+    <h3 style="display: inline-block;">ToDoList:</h3>
+    <button class="btn btn-danger" style="margin-left: 215px;" (click)="onDeleteAll()">Delete All</button>
+    
+    <hr>
+
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center"
+        *ngFor="let b of toDoArr; let i=index" [ngStyle]="{'background': b.color}">
+        {{i+1}} - {{b.value}}
+        <span class="badge">
+          <button class="btn btn-success" style="margin-right: 20px" (click)="onChangePriority(b)">✔</button>
+          <button class="btn btn-danger" (click)="onDeleteItem(b)">×</button>
+        </span>
+      </li>
+    </ul>
+
+    <hr>
+
+    <h5>Task</h5>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="What do you need to do?" aria-label="What do you need to do?"
+        aria-describedby="basic-addon1" [(ngModel)]="itemAdd">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="check">
+    </div>
+    <button class="btn btn-primary" style="margin-left: 332px;" (click) = "onSaveItem()" type = "submit">Save Item</button>
+   
+  </div>
+</div>
