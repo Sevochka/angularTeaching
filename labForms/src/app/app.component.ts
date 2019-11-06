@@ -9,16 +9,24 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 export class AppComponent implements OnInit {
   form: FormGroup;
 
+  finalObj = {};
   ngOnInit(): void {
     this.form = new FormGroup({
       email: new FormControl("", [Validators.email, Validators.required]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)])
+      password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
+      fullAddress: new FormGroup({
+        address: new FormControl('',  Validators.required),
+        city: new FormControl('',  Validators.required),
+        country: new FormControl('', Validators.required),
+        zip: new FormControl('',  Validators.required),
+      })
     });
   }
 
   submit() {
-    console.log(this.form);
     const formData = this.form.value;
-    console.log(formData);
+    console.log(this.form.value);
+    
+    this.form.reset();
   }
 }
