@@ -1,0 +1,18 @@
+<h1>Posts Page</h1>
+
+<button class = "btn btn-success m-2" >
+    Show Ids
+</button>
+
+<button class="btn btn-primary">
+    Show Ids (program)
+</button>
+
+<div class="card" *ngFor="let post of postsService.posts">
+    <h4>
+        <a href="#">
+            <strong>(ID {{post.id}})</strong>
+            {{post.title}}
+        </a>
+    </h4>
+</div>
