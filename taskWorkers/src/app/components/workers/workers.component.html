@@ -1,0 +1,9 @@
+<div class="form-group">
+    <label for="formGroupExampleInput">Filter</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="filter" [(ngModel)]="search">
+  </div>
+
+
+<div class="alert alert-success">
+    <app-worker *ngFor="let work of workers | filter:search" [worker] = "work"></app-worker>
+</div>

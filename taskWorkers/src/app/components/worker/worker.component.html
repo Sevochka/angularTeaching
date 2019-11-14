@@ -1,0 +1,32 @@
+<div class="card m-2" style="width: 18rem; display: inline-block;">
+    <div class="card-header">
+      {{worker.lastName}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{worker.firstName}}</li>
+      <li class="list-group-item">{{worker.patronymic}}</li>
+      <li class="list-group-item">{{worker.department}}</li>
+    </ul>
+    <button class="btn btn-danger m-2" (click) = "removeWorker()">Remove</button>
+    <button class="btn btn-warning" (click) = "onClick()">{{str}}</button>
+  </div>
+
+  
+    <div class="form-row" *ngIf="flag">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="First name" [(ngModel)]="worker.firstName">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Last name" [(ngModel)]="worker.lastName">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Patr" [(ngModel)]="worker.patronymic">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Department" [(ngModel)]="worker.department">
+      </div>
+    </div>
+  
+
+<hr>
+
